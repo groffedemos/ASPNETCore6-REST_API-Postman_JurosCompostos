@@ -9,8 +9,8 @@ public static class CalculoFinanceiro
             throw new Exception("Parâmetros para cálculo inválidos!");
 
         // FIXME: Simulação de falha 
-        return valorEmprestimo * Math.Pow(1 + (percTaxa / 100), numMeses);
-        //return Math.Round(
-        //    valorEmprestimo * Math.Pow(1 + (percTaxa / 100), numMeses), 2);
+        //return valorEmprestimo * Math.Pow(1 + (percTaxa / 100), numMeses);
+        return Math.Round(
+            valorEmprestimo * Math.Pow(1 + (percTaxa / 100), numMeses), 2);
     }
 }
