@@ -8,7 +8,7 @@ on:
 
 env:
   IMAGE_DOCKERHUB: ${{ secrets.DOCKERHUB_USERNAME }}/apifinancas-dotnet6
-  DIR_WEBAPP: './APIFinancas'
+  DIR_WEBAPP: './'
   
 jobs:
 
