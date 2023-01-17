@@ -28,12 +28,12 @@ public class CalculoFinanceiroController : ControllerBase
            $"%Taxa de Juros: {percTaxa}");
 
         // FIXME: Codigo comentado para simulacaoo de falhas em testes automatizados
-        /*if (valorEmprestimo <= 0)
+        if (valorEmprestimo <= 0)
             return GerarResultParamInvalido("Valor do Emprestimo");
         if (numMeses <= 0)
             return GerarResultParamInvalido("Numero de Meses");
         if (percTaxa <= 0)
-            return GerarResultParamInvalido("Percentual da Taxa de Juros");*/
+            return GerarResultParamInvalido("Percentual da Taxa de Juros");
 
         double valorFinalJuros =
             CalculoFinanceiro.CalcularValorComJurosCompostos(
