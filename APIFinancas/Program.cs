@@ -1,7 +1,19 @@
 using System.Text.Json.Serialization;
+using Microsoft.Identity.Web;
 using Microsoft.OpenApi.Models;
+using Microsoft.AspNetCore.Authentication.JwtBearer;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
+        .AddMicrosoftIdentityWebApi(options =>
+{
+    builder.Configuration.Bind("AzureAdB2C", options);
+
+    options.TokenValidationParameters.NameClaimType = "name";
+},
+options => { builder.Configuration.Bind("AzureAdB2C", options); });
+
 
 builder.Services.AddControllers().AddJsonOptions(options =>
 {
@@ -20,6 +32,9 @@ app.UseSwagger();
 app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
+
+app.UseAuthentication();
+app.UseAuthorization();
 
 app.MapControllers();
 

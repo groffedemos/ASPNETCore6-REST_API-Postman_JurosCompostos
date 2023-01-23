@@ -6,6 +6,7 @@ using Calculos.Common;
 namespace APIFinancas.Controllers;
 
 [ApiController]
+[Authorize]
 [Route("[controller]")]
 public class CalculoFinanceiroController : ControllerBase
 {
